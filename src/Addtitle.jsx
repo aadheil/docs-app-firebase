@@ -66,7 +66,7 @@ const createtitle=async()=>{
                  <Col className='mt-5 d-flex justify-content-center'  lg={3} md={4} sm={6} xs={12}>
                      <Card className='bg-transparent shadow border rounded' style={{ width: '22rem',height:'350px' }}>
       <Card.Body>
-        <Card.Title className="mb-2 text-center text-light">{items.title}</Card.Title>
+        <Card.Title className="mb-2 text-center">{items.title}</Card.Title>
         <Card.Text className=' ' style={{height:'200px'}}>
           {items.content} 
         </Card.Text>
