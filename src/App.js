@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import Addtitle from './Addtitle'
+import './App.css'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='cont w-100 ' style={{height:'100%'}} >
+      <div className='w-100' style={{height:'100%'}}>
+
+<Addtitle/>
+</div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
