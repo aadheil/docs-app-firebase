@@ -187,14 +187,18 @@ const formats = [
       getdocs()
 
     },[saverefresher])
+    useEffect(()=>{
+      var lenofall=alldoc?.length
+           setindexforheight(lenofall)
+    })
 
 
   return (
     <>{!editdiv?
-    <div className='d-flex flex-column justify-content-center ' style={{height:indexforheight>0?'100%':'100vh'}}>
+    <div className='d-flex flex-column justify-content-center ' style={{height:indexforheight>1?'100%':'100vh'}}>
 
         <div className='d-flex justify-content-center'>
-        <button onClick={handleShow} className='btn btn-outline-danger ' style={{marginTop:'150px'}}><span>Add Docs</span><i className="fa-solid fa-plus ms-2"></i></button>
+        <button onClick={handleShow} className='btn btn-outline-danger ' style={{marginTop:'150px'}}><span>Add Notes</span><i className="fa-solid fa-plus ms-2"></i></button>
         </div>
        
      
@@ -205,16 +209,17 @@ const formats = [
                  <Col className='mt-5 d-flex justify-content-center'  lg={3} md={4} sm={6} xs={12}>
                      <Card  className='crd shadow' style={{ width: '22rem',height:'350px' ,backgroundColor:'lightyellow'}}>
       <Card.Body>
-        <Card.Title className="mb-2 text-center text-danger" style={{fontSize:'35px'}}>{items.title}</Card.Title>
+        <Card.Title className="mb-2 text-center text-light" style={{fontSize:'35px'}}>{items.title}</Card.Title>
         <Card.Text className='cdtxt' style={{height:'200px',fontSize:'25px'}}>
           {items.content} 
           
         </Card.Text>
-        <div className='d-flex justify-content-evenly'>
-        <button className='btn btn-outline-danger' onClick={(e)=>deleteacard(items.id)}>Delete</button>
-        <button className='btn btn-outline-danger  ' onClick={(e)=>oneditclick({id:items.id,title:items.title,content:items.content})}>Edit</button>
-        </div>
+        
       </Card.Body>
+      <div className='d-flex justify-content-evenly'>
+        <button className='btn btn-outline-danger' onClick={(e)=>deleteacard(items.id)}>Delete</button>
+        <button className='btn btn-outline-danger  '   onClick={(e)=>oneditclick({id:items.id,title:items.title,content:items.content})}>Edit</button>
+        </div>
     </Card>
                  
                  </Col>
@@ -290,6 +295,7 @@ const formats = [
      {indexforheight==1&&<div style={{height:'100px'}}></div>}
      {indexforheight==2&&<div style={{height:'100px'}}></div>}
      {indexforheight==3&&<div style={{height:'100px'}}></div>}
+     {indexforheight==4&&<div style={{height:'100px'}}></div>}
     
     </>
   )
